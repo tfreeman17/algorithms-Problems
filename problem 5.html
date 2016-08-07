@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Function Algorithm Problem 5</title>
+</head>
+<body>
+	<div>
+	 	<h1 id="text"></h1>
+	</div>
+	<script>
+		// 5. Write function that translates a text to Pig Latin and back. English is translated to Pig Latin by taking the first letter of every word, moving it to the end of the word and adding "ay".
+		// "The quick brown fox" -> "Hetay uickqay rownbay oxfay".
+		var toRun;
+		var x = 0;
+		while(x === 0){
+			toRun = prompt("Would you like to turn text to Pig Latin or English? Enter 'Pig Latin' or 'English'").toLowerCase();
+			if(toRun === "pig latin"){
+				toPigLatin();
+				x += 1;
+			} else if (toRun === "english"){
+				toEnglish();
+				x += 1;
+			}
+		}
+		function toPigLatin(){
+			var normTxt = prompt("Give me some text and see what it is in Pig Latin!");	
+			normTxt = normTxt.split(" ");
+			for (var i = 0; i < normTxt.length; i++){
+				normTxt[i] = normTxt[i].split("");
+			}
+			for (i = 0; i < normTxt.length; i++){
+				var first = normTxt[i].splice(0,1);
+				normTxt[i].push(first[0]);
+				normTxt[i].push("ay");
+				normTxt[i] = normTxt[i].join("");
+			}
+			var pigLatin = normTxt.join(" ");
+			document.getElementById("text").innerHTML = pigLatin;
+		}
+		function toEnglish(){
+			var pigLatin = prompt("Give me some in Pig Latin and I'll convert it to English!");
+			pigLatin = pigLatin.split(" ");
+			for (var i = 0; i < pigLatin.length; i++){
+				pigLatin[i] = pigLatin[i].split("");
+				pigLatin[i].pop();
+				pigLatin[i].pop();
+				var letter = pigLatin[i].pop();
+				pigLatin[i].splice(0,0,letter);
+				pigLatin[i] = pigLatin[i].join("");
+			}
+			var english = pigLatin.join(" ");
+			document.getElementById("text").innerHTML = english;
+		}
+	</script>
+</body>
+</html>

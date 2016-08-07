@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Function Algorithm Problem 8</title>
+</head>
+<body>
+	<script>
+		// 8. Write a function which takes no input and returns an array of 10 distinct randomly generated integers between 1 and 100.
+		// -> [48, 5, 32, 2, 10, 11, 34, 95, 82, 93] (good!)
+		// -> [1, 1, 24, 63, 45, 84, 17, 11, 59, 13] (bad - duplicated number)
+		function checkDoop(num, arr){ // check if the number has already been generated into the array
+			for(var j = 0; j < arr.length; j++){
+				if(num === arr[j]){
+					return false;
+				}
+			}
+			return true;
+		}
+		function random(){
+			var array = [];
+			array.push(Math.floor((Math.random() * 100) + 1)); // first number
+			for(var i = 1; i < 10; i++){
+				var w = 1;				
+				var x = Math.floor((Math.random() * 100) + 1);
+				while(w === 1){
+					if(checkDoop(x,array) === true){ // run checkDoop on number
+						array.push(x); // add if it hasn't been used
+						w += 1; // get out of while loop to restart for loop
+					} else {
+						x = Math.floor((Math.random() * 100) + 1);// if the number has been used keep generating new ones
+					}
+				}
+			}
+			console.log(array); // log array
+		}
+		random();
+	</script>
+</body>
+</html>

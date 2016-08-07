@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Function Algorithm Problem 6</title>
+</head>
+<body>
+	<script>
+		// 6. Write a function which takes in two arrays and determines if they contain the same number of the same values.
+		var test1a = [];
+		var test1b = []; 
+		//-> true
+		var test2a = [2, 3, 4];
+		var test2b = [1, 2, 3]; 
+		// -> false
+		var test3a = ["a", "c", "b"];
+		var test3b = ["a", "b", "c"]; 
+		// -> true
+		var test4a = [1, 1, 1];
+		var test4b = [1, 1, 1, 1];
+		// -> false
+		function value(arr1,arr2){
+			if(arr1.length !== arr2.length){ // if the arrays aren't the same length they can't contain the same number of the same values
+				return console.log(false);
+			} else {
+				arr1.sort(); // sorting both arrays the same way should make the same values show up in the same index
+				arr2.sort();
+				for (var i = 0; i < arr1.length; i++){ // loop through and compare each index since they should be inthe same places
+					if (arr1[i] !== arr2[i]){
+						return console.log(false);
+					}
+				}
+			}
+			return console.log(true);
+		}
+		value(test1a,test1b);
+		value(test2a,test2b);
+		value(test3a,test3b);
+		value(test4a,test4b);
+	</script>
+</body>
+</html>

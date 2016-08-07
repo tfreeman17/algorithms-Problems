@@ -1,0 +1,42 @@
+<!--  // Write a funciton which, given a year as a number, returns whether that number is a leap year.
+
+// 2000 -> true
+// 1900 -> false -->
+<!-- // 2016 -> true 
+
+// function result = is_leap_year(year)
+
+// if a given year is a leap year
+
+// RESULT = IS_LEAP_YEAR(YEAR) returns TRUE if YEAR is a leap year, and
+
+// FALSE otherwise.
+
+
+// An error is raised if YEAR is not a positive integer?? -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Functoin Algorithms Problem 2</title>
+</head>
+<body>
+	<script>
+		
+		function findLeapYear(givenYear){
+			if (givenYear % 400 === 0){
+				console.log(givenYear + " is a Leap Year!");
+			} else if (givenYear % 4 === 0 && givenYear % 100 !== 0){
+				console.log(givenYear + " is a Leap Year!");
+			} else {
+				console.log(givenYear + " is not a Leap Year.");
+			}
+		}
+		findLeapYear(2000);
+		findLeapYear(1900);
+		findLeapYear(2016);
+		findLeapYear(1200);
+		findLeapYear(1998);
+		
+	</script>
+</body>
+</html>
