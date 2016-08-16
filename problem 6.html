@@ -1,3 +1,11 @@
+
+<!-- Write a function which takes in two arrays and determines if they contain the same number of the same values.
+[], [] -> true
+[2, 3, 4], [1, 2, 3] -> false
+["a", "c", "b"], ["a", "b", "c"] -> true
+[1, 1, 1], [1, 1, 1, 1] -> false -->
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,12 +27,15 @@
 		var test4b = [1, 1, 1, 1];
 		// -> false
 		function value(arr1,arr2){
-			if(arr1.length !== arr2.length){ // if the arrays aren't the same length they can't contain the same number of the same values
+			if(arr1.length !== arr2.length){ 
+			// if the arrays aren't the same length they can't contain the same number of the same values
 				return console.log(false);
 			} else {
-				arr1.sort(); // sorting both arrays the same way should make the same values show up in the same index
+				arr1.sort(); 
+				// sorting both arrays the same way should make the same values show up in the same index
 				arr2.sort();
-				for (var i = 0; i < arr1.length; i++){ // loop through and compare each index since they should be inthe same places
+				for (var i = 0; i < arr1.length; i++){ 
+				// loop through and compare each index since they should be inthe same places
 					if (arr1[i] !== arr2[i]){
 						return console.log(false);
 					}

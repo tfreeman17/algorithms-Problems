@@ -8,7 +8,7 @@
 		// 8. Write a function which takes no input and returns an array of 10 distinct randomly generated integers between 1 and 100.
 		// -> [48, 5, 32, 2, 10, 11, 34, 95, 82, 93] (good!)
 		// -> [1, 1, 24, 63, 45, 84, 17, 11, 59, 13] (bad - duplicated number)
-		function checkDoop(num, arr){ // check if the number has already been generated into the array
+		function checkDuplicate(num, arr){ // check if the number has already been generated into the array
 			for(var j = 0; j < arr.length; j++){
 				if(num === arr[j]){
 					return false;
@@ -16,6 +16,7 @@
 			}
 			return true;
 		}
+		
 		function random(){
 			var array = [];
 			array.push(Math.floor((Math.random() * 100) + 1)); // first number
